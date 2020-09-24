@@ -45,9 +45,8 @@ module.exports = {
             }
             )
     },
-    updateUsers:(data,callBack)=>{ 
-        pool.query(
-            'update users set firstname=?, lastname=?,email=?,password=?, mobile=? where id=?',
+    updateUsers:(data, callBack) => { 
+        pool.query(`update users set firstname=?, lastname=?,email=?,password=?, mobile=? where id = ?`,
             [
                 data.firstname,
                 data.lastname,
@@ -59,9 +58,9 @@ module.exports = {
             (error, results, fileds)=>{
                 if (error){
                     callBack(error);
-                return callBack(null,results[0]);
-
                 }
+                return callBack(null,results);
+                
             }
         )
     },
@@ -73,7 +72,7 @@ module.exports = {
                 if (error) {
                    return callBack(error);
                 }
-                return callBack(null, results[0]);
+                return callBack(null, results);
             }
             )
     },

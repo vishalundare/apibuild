@@ -4,7 +4,7 @@ const pool = require('../../config/db');
 // const pool = require('../../config/db');
 
 module.exports = {
-    createuser: (req, res) => {
+    createUser: (req, res) => {
         const body = req.body;
         console.log(body)
         const salt = genSaltSync(10);
@@ -55,13 +55,13 @@ module.exports = {
         });
     },
     updateUsers:(req,res)=>{
-        const body= body.req;
-        const salt=genSaltSync(10);
+        const body = req.body;
+        const salt = genSaltSync(10);
         body.password= hashSync(body.password, salt);
         updateUsers(body, (err, results)=>{
             if (err){
                 console.log(err);
-                return;
+                return false;
             }
             if (!results){
                 res.json({

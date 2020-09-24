@@ -1,7 +1,7 @@
-const { createuser, getUserByUserid, getUsers, deleteUser, updateUsers} = require ('./user.controler');
+const { createUser, getUserByUserid, getUsers, deleteUser, updateUsers} = require ('./user.controler');
 const router =require('express').Router();
 
-router.post('/', createuser);
+router.post('/', createUser);
 router.get('/', getUsers);
 router.get('/:id', getUserByUserid);
 router.patch('/', updateUsers);

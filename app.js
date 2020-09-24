@@ -6,7 +6,7 @@ const serverport=process.env.serverport
 const userRouter = require('./api/users/user.router')
 
 app.use(express.json());
-app.set(urlencoded,({extended:true}));
+// app.set(urlencoded,({extended:true}));
 
 app.use('/api/users', userRouter)
 
