@@ -1,4 +1,4 @@
-const { create, getUserByUserid, getUsers, updateUsers, deleteUser } = require('./user.service');
+const { createUser, getUserByUserid, getUsers, updateUsers, deleteUser } = require('./user.service');
 const { genSaltSync, hashSync } = require('bcrypt');
 const pool = require('../../config/db');
 // const pool = require('../../config/db');
@@ -9,7 +9,7 @@ module.exports = {
         console.log(body)
         const salt = genSaltSync(10);
         body.password = hashSync(body.password, salt);
-        create(body, (err, results) => {
+        createUser(body, (err, results) => {
             if (err) {
                 console.log(err);
                 return res.status(500).json({

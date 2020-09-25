@@ -1,18 +1,18 @@
 const { createPool } = require ('mysql');
 
 const pool = createPool({
-    // port:process.env.DBPORT,
-    // host:process.env.DBHOST,
-    // user:process.env.DBUSER,
-    // password:process.env.DBPASS,
-    // database:process.env.DB,
-    // connectionlimit:10
-    port:3306,
-    host:'localhost',
-    user:'root',
-    password:'',
-    database:'stock',
+    port:process.env.DB_PORT,
+    host:process.env.DB_HOST,
+    user:process.env.DB_USER,
+    password:process.env.DB_PASS,
+    database:process.env.DB_DATABASE,
     connectionlimit:10
+    // port:3306,
+    // host:'localhost',
+    // user:'root',
+    // password:'',
+    // database:'stock',
+    // connectionlimit:10
 });
 
 module.exports = pool;

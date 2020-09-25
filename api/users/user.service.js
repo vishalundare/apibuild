@@ -3,7 +3,7 @@ const pool = require('../../config/db');
 
 
 module.exports = {
-    create:(data, callback)=>{
+    createUser:(data, callback)=>{
         pool.query(
                 `insert into users(firstname,lastname,email,password,mobile)
                 values(?,?,?,?,?)`,
