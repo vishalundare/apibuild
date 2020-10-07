@@ -4,11 +4,13 @@ const express = require ('express');
 const app = express();
 const serverport=process.env.serverport
 const userRouter = require('./api/users/user.router')
+const locationRouter = require('./api/location/location.router')
 
 app.use(express.json());
-app.set(urlencoded,({extended:true}));
+// app.set(urlencoded,({extended:true}));
 
 app.use('/api/users', userRouter)
+app.use('/api/location', locationRouter)
 
 // app.get('/api', (req, res)=>{
 //     res.json({
