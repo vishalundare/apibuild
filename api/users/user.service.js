@@ -1,7 +1,6 @@
 const pool = require('../../config/db');
 
 
-
 module.exports = {
     createUser:(data, callback)=>{
         pool.query(

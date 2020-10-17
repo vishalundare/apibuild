@@ -3,7 +3,7 @@ const router =require('express').Router();
 
 router.post ('/', createLocation);
 router.get ('/', getLocation);
-router.get ('/:id',getLocationById);
+router.get ('/:id', getLocationById);
 router.patch ('/', updateLocation);
 router.delete ('/', deleteLocation);
 

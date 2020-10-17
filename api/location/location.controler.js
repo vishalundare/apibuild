@@ -28,6 +28,7 @@ module.exports = {
                     message:"No Record Found"
                 })
             }
+            
             res.status(200).json({
                 success:1,
                 data:results
@@ -82,7 +83,7 @@ module.exports = {
             if (!results){
                 res.status(500).json({
                     success:0,
-                    message:"No Record Found"
+                    message:"No Record Found to delete"
                 })
             }
             res.status(200).json({
